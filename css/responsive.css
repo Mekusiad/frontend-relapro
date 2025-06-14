@@ -1,0 +1,211 @@
+
+
+@media (max-width: 1024px) {
+  .container { /* Afeta todos os containers nas telas */
+    padding: 1.5rem;
+  }
+
+  /* Dashboard Hero */
+  .hero-content h2 {
+    font-size: 2rem;
+  }
+
+  /* Dashboard Stat Cards */
+  .stat-card {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Navbar */
+  .navbar {
+    flex-direction: column;
+    padding: 1rem; /* Reduz padding */
+    gap: 0.8rem; /* Reduz gap entre brand e links */
+    align-items: flex-start; /* Alinha brand à esquerda */
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: space-around; /* Distribui melhor os botões */
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .nav-button {
+    padding: 0.6rem 0.9rem; /* Ajusta padding dos botões */
+    font-size: 0.9rem;
+  }
+
+  .user-name {
+    margin-left: 0; /* Remove margem quando empilhado */
+    width: 100%; /* Opcional, para ocupar espaço se necessário */
+    text-align: center; /* Centraliza nome do usuário se quebrar linha */
+    padding: 0.5rem 0;
+  }
+
+  /* Dashboard Hero */
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+  }
+  .hero-content {
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+  }
+  .hero-actions {
+    flex-direction: column; /* Botões empilhados */
+    align-items: stretch; /* Botões ocupam largura total */
+  }
+  .hero-actions .btn-primary,
+  .hero-actions .btn-secondary {
+    width: 100%;
+  }
+
+  /* Dashboard Stats */
+  .stats {
+    /* flex-wrap já está no dashboard.css, mas podemos forçar aqui se necessário */
+    justify-content: center;
+  }
+  .stat-card {
+    flex: 1 1 calc(50% - 1rem); /* 2 cards por linha, com gap */
+    min-width: unset;
+  }
+
+  /* Dashboard Filter Bar */
+  .filter-bar {
+    flex-direction: column;
+  }
+  .filter-input, .filter-select {
+    min-width: unset; /* Permite que ocupem 100% da largura do pai */
+  }
+
+  /* OS List Itens */
+  .os-list li {
+    flex-direction: column;
+    align-items: flex-start; /* Alinha todo conteúdo à esquerda */
+    gap: 0.8rem;
+  }
+  .os-info {
+    width: 100%;
+  }
+  .os-status {
+    margin-top: 0.5rem; /* Espaço acima do status */
+  }
+  .os-actions {
+    width: 100%;
+    justify-content: flex-start; /* Botões à esquerda */
+    margin-left: 0;
+    margin-top: 1rem;
+    flex-wrap: wrap; /* Para quebrar botões se não couberem */
+  }
+
+  /* OS Form */
+  .os-form {
+    padding: 1.5rem;
+  }
+  .form-row {
+    flex-direction: column;
+    gap: 0; /* Remove gap, form-group já tem margin-bottom */
+  }
+  .form-row .form-group {
+    min-width: unset;
+    width: 100%;
+    margin-bottom: 1rem; /* Adiciona margem entre os campos empilhados */
+  }
+  .form-row .form-group:last-child {
+    margin-bottom: 0;
+  }
+
+  .form-actions {
+    flex-direction: column-reverse; /* Cancelar em cima, Salvar embaixo */
+    gap: 1rem;
+  }
+  .form-actions button { /* Botões ocupam largura total */
+    width: 100%;
+  }
+  .form-actions-flex { /* Botão "Adicionar Atividade" */
+    justify-content: center;
+  }
+
+  /* Modal Content */
+  .modal-content {
+    padding: 2rem;
+    width: 95%;
+    max-height: 85vh;
+  }
+}
+
+@media (max-width: 480px) {
+
+  /* Login Form */
+  .login-form {
+    padding: 2rem;
+  }
+  .login-header h2 {
+    font-size: 1.5rem;
+  }
+
+  /* Navbar */
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+  .navbar-brand .material-icons {
+    font-size: 1.8rem;
+  }
+  .nav-links {
+    justify-content: center; /* Centraliza botões se quebrarem muito */
+  }
+  .nav-button {
+    flex-grow: 1; /* Faz botões ocuparem espaço disponível na linha */
+    text-align: center;
+  }
+
+
+  /* Títulos de Tela */
+  .dashboard-screen-container .container h1,
+  .os-form-screen-container .container h1 {
+    font-size: 1.6rem; /* Títulos um pouco menores */
+    justify-content: center; /* Centraliza o título com ícone */
+  }
+
+  /* Dashboard Hero */
+  .hero-content h2 {
+    font-size: 1.8rem;
+  }
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  /* Dashboard Stat Cards */
+  .stat-card {
+    flex: 1 1 100%; /* 1 card por linha */
+  }
+  .stat-card p { /* Número da estatística */
+    font-size: 2rem;
+  }
+
+
+  /* OS Form - Activity List */
+  .activity-item {
+    padding: 1rem;
+  }
+  .activity-actions { /* Botões de ação da atividade */
+    position: static; /* Remove posicionamento absoluto */
+    margin-top: 1rem;
+    justify-content: flex-end; /* Alinha à direita */
+  }
+
+  /* Modal Content */
+  .modal-content {
+    padding: 1.5rem;
+  }
+  .modal-content h2 { /* Título do modal */
+    font-size: 1.5rem;
+  }
+  .modal-content .form-actions button {
+    font-size: 0.9rem; /* Botões um pouco menores no modal */
+  }
+}
+

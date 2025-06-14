@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RELAPRO - Relatórios Profissionais</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/login.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/os-form.css">
+  <link rel="stylesheet" href="css/modals.css">
+  <link rel="stylesheet" href="css/technicians.css">
+  <link rel="stylesheet" href="css/notifications.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+
+  <header class="navbar" style="display: none;">
+    <div class="navbar-brand">
+      <span class="material-icons">build</span>
+      <span class="app-title">RELAPRO</span>
+    </div>
+    <div class="nav-links">
+      <button id="btnDashboard" class="nav-button"><span class="material-icons">dashboard</span> Dashboard</button>
+      <button id="btnNovaOS" class="nav-button"><span class="material-icons">add_box</span> Nova OS</button>
+      <button id="btnManageTechnicians" class="nav-button"><span class="material-icons">engineering</span> Técnicos</button>
+      <span id="userName" class="user-name">Técnico</span>
+      <button id="btnLogout" class="nav-button logout-button"><span class="material-icons">logout</span> Sair</button>
+    </div>
+  </header>
+
+  <main id="app-content"></main>
+
+  <script src="js/libs/jspdf.umd.min.js"></script>
+  <script src="js/libs/jspdf.plugin.autotable.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/qrcode-generator/qrcode.js"></script>
+  
+
+  <script type="module" src="js/main.js"></script>
+
+</body>
+</html> 

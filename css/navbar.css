@@ -1,0 +1,63 @@
+/* css/navbar.css */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--primary-dark);
+  color: var(--white);
+  padding: 1rem 2rem;
+  box-shadow: var(--shadow-md);
+  position: sticky; /* Mantém no topo ao rolar */
+  top: 0;
+  left: 0; /* Adicionado para garantir que ocupe toda a largura */
+  right: 0; /* Adicionado para garantir que ocupe toda a largura */
+  z-index: 1000;
+  width: 100%; /* Garante que a navbar use toda a largura */
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.navbar-brand .material-icons {
+  font-size: 2rem;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-button {
+  background-color: transparent;
+  color: var(--white);
+  padding: 0.7rem 1rem;
+  border-radius: var(--border-radius);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+
+.nav-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.nav-button.logout-button {
+  background-color: var(--danger);
+}
+
+.nav-button.logout-button:hover {
+  background-color: #c0392b; /* Cor mais escura para o hover do danger */
+}
+
+.user-name {
+  font-weight: 500;
+  margin-left: 1rem;
+}

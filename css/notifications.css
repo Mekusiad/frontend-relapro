@@ -1,0 +1,52 @@
+/* css/notifications.css */
+
+#toast-container {
+    position: fixed;
+    top: 80px; /* Abaixo da navbar */
+    right: 20px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.toast {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 20px;
+    border-radius: var(--border-radius);
+    background-color: var(--black);
+    color: var(--white);
+    box-shadow: var(--shadow-lg);
+    transform: translateX(120%);
+    transition: transform 0.5s ease-in-out;
+    min-width: 300px;
+    max-width: 350px;
+}
+
+.toast.show {
+    transform: translateX(0);
+}
+
+.toast .material-icons {
+    font-size: 1.5rem;
+}
+
+.toast p {
+    margin: 0;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.toast.toast-success {
+    background-color: var(--success);
+}
+
+.toast.toast-error {
+    background-color: var(--danger);
+}
+
+.toast.toast-warning {
+    background-color: var(--warning);
+}

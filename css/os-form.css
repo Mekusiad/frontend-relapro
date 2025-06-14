@@ -1,0 +1,451 @@
+
+.os-form-screen-container .container h1 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 2rem;
+  color: var(--primary-dark);
+  margin-bottom: 2rem;
+}
+
+.os-form {
+  background-color: var(--white);
+  padding: 2.5rem;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.form-section {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--gray-light);
+}
+.form-section:last-of-type {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.form-section h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.3rem;
+  color: var(--primary-dark);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--gray-light);
+}
+
+.form-row {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+.form-row .form-group {
+  flex: 1;
+  min-width: 280px;
+  margin-bottom: 0;
+}
+.form-group.full-width {
+  width: 100%;
+  flex-basis: 100%;
+}
+
+.checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.5rem;
+  margin-top: 0.5rem;
+}
+.checkbox-group .checkbox-item input[type="checkbox"], /* Adicionado .checkbox-item */
+.equipamento-selecao input[type="checkbox"] { /* Estilo para checkbox de equipamento */
+  width: auto;
+  margin-right: 0.5rem;
+  transform: scale(1.2);
+}
+.checkbox-group .checkbox-item label, /* Adicionado .checkbox-item */
+.equipamento-selecao label { /* Estilo para label de equipamento */
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+  font-weight: normal;
+  color: var(--black);
+  cursor: pointer;
+  flex-grow: 1; /* Label do equipamento ocupa espaço */
+}
+
+
+.file-upload {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+.file-upload .btn-upload {
+  background-color: var(--secondary-color);
+  color: var(--primary-dark);
+  padding: 0.8rem 1.2rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+.file-upload .btn-upload:hover {
+  background-color: #c8e6c9;
+  transform: translateY(-2px);
+}
+.file-upload span {
+  font-size: 0.9rem;
+  color: var(--gray-dark);
+}
+
+.fotos-preview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 1rem;
+  border: 1px dashed var(--gray-medium);
+  padding: 10px;
+  border-radius: var(--border-radius);
+  min-height: 80px;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 0.9rem;
+  color: var(--gray-dark);
+  text-align: center;
+}
+.fotos-preview:empty::before {
+    content: "Nenhuma foto selecionada. Clique em 'Selecionar Fotos'.";
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+.fotos-preview .img-container {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--gray-light);
+}
+.fotos-preview .img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.fotos-preview .img-container .remove-img-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: var(--white);
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  line-height: 1;
+  padding: 0;
+  transition: background-color 0.2s ease;
+}
+.fotos-preview .img-container .remove-img-btn:hover {
+  background-color: var(--danger);
+}
+
+.hint {
+  font-size: 0.85rem;
+  color: var(--gray-dark);
+  margin-top: 0.5rem;
+  display: block;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.form-actions-flex {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 1.5rem;
+    gap: 1rem;
+}
+
+#noActivitiesMessageOsForm { /* Corrigido ID (era #noActivitiesMessage) */
+  text-align: center;
+  color: var(--gray-dark);
+  font-style: italic;
+  padding: 20px;
+  border: 1px dashed var(--gray-light);
+  border-radius: var(--border-radius);
+  margin-bottom: 1.5rem;
+}
+.activity-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+.activity-item {
+  background-color: var(--gray-light);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  margin-bottom: 1rem;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+}
+.activity-item h4 {
+  font-size: 1.1rem;
+  color: var(--primary-dark);
+  margin-bottom: 0.5rem;
+  border-bottom: 1px dashed var(--gray-medium);
+  padding-bottom: 0.5rem;
+}
+.activity-item p {
+  font-size: 0.95rem;
+  color: var(--black);
+  margin-bottom: 0.3rem;
+}
+.activity-item small {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--gray-dark);
+  margin-top: 0.8rem;
+}
+.activity-actions {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  display: flex;
+  gap: 0.5rem;
+}
+.activity-actions button {
+  background-color: var(--gray-medium);
+  color: var(--black);
+  padding: 0.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+}
+.activity-actions button:hover {
+  background-color: var(--primary-color);
+  color: var(--white);
+  transform: scale(1.1);
+}
+.activity-actions .delete-activity-btn:hover {
+  background-color: var(--danger);
+}
+
+/* NOVOS ESTILOS ABAIXO */
+.input-error {
+  border-color: var(--danger) !important;
+  box-shadow: 0 0 0 2px rgba(231, 76, 60, 0.2);
+}
+.validation-message {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--danger);
+  margin-top: 0.3rem;
+  min-height: 1em;
+}
+.tooltip-trigger {
+  cursor: help;
+  position: relative;
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  vertical-align: middle;
+  margin-left: 4px;
+}
+
+.tabs-container {
+  display: flex;
+  border-bottom: 2px solid var(--primary-color);
+  margin-bottom: 0;
+  flex-wrap: wrap;
+}
+.tab-button {
+  padding: 10px 18px;
+  cursor: pointer;
+  border: none;
+  border-bottom: 3px solid transparent;
+  background-color: transparent;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--gray-dark);
+  margin-right: 5px;
+  margin-bottom: -2px;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+.tab-button:hover {
+  color: var(--primary-color);
+}
+.tab-button.active {
+  color: var(--primary-color);
+  border-bottom-color: var(--primary-color);
+  font-weight: 600;
+}
+.tab-button.tab-incomplete {
+  color: var(--warning);
+  border-bottom-color: var(--warning) !important;
+}
+
+.tab-forms-container {
+    margin-top: 1.5rem;
+}
+.tab-content {
+  padding: 1.5rem;
+  border: 1px solid var(--gray-light);
+  border-radius: var(--border-radius);
+  background-color: #fdfdfd;
+}
+.tab-content h4 {
+    color: var(--primary-dark);
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px dashed var(--gray-medium);
+}
+.tab-content h5 {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.equipamentos-checklist {
+  margin-bottom: 1.5rem;
+}
+.equipamento-item-stub {
+  padding: 0.8rem 0.5rem; /* Aumentado padding vertical */
+  border-bottom: 1px solid var(--gray-light);
+}
+.equipamento-item-stub:last-child {
+    border-bottom: none;
+}
+
+.equipamento-selecao {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.equipamento-quantidade {
+  width: 70px;
+  padding: 0.4rem 0.6rem;
+  font-size: 0.9rem;
+  text-align: center;
+  border: 1px solid var(--gray-medium);
+  border-radius: var(--border-radius);
+  margin-left: auto; /* Tenta empurrar para a direita */
+}
+
+.equip-details {
+  padding-left: 25px; /* Indentação */
+  border-left: 2px solid var(--primary-light); /* Linha visual */
+  margin-top: 0.8rem;
+  padding-top: 0.8rem;
+  margin-left: 25px; /* Alinha com o recuo do label do checkbox */
+}
+
+.hint-details {
+    font-style: italic;
+    color: var(--gray-dark);
+    font-size: 0.9rem;
+}
+
+
+
+.btn-medicao {
+  padding: 0.3rem 0.6rem;
+  font-size: 0.8rem;
+  margin-left: 0.5rem; /* Pequeno espaço após o input de quantidade */
+  /* display: none; é controlado por JS */
+  vertical-align: middle; /* Alinha com o input de quantidade e checkbox */
+  line-height: 1.2; /* Ajusta altura do texto com ícone */
+}
+
+.btn-medicao .material-icons {
+  font-size: 1rem; /* Ícone menor */
+  margin-right: 4px;
+  vertical-align: text-bottom;
+}
+
+/* Para modais maiores como o de medição */
+.modal-content.large {
+    max-width: 900px; /* Ou o tamanho que você preferir */
+    width: 90%;
+}
+
+
+.form-section-sm {
+    margin-bottom: 1rem;
+    padding-top: 0.5rem;
+}
+.form-section-sm h5 {
+    font-size: 1rem;
+    color: var(--primary-color);
+    margin-bottom: 0.8rem;
+}
+.equipamento-utilizado-item {
+    align-items: flex-end; /* Alinha o botão de remover com a base dos inputs */
+    margin-bottom: 0.5rem;
+}
+.equipamento-utilizado-item .form-group {
+    margin-bottom: 0; /* Remove margem extra se .form-row já tem gap */
+}
+.btn-remove-equip-utilizado.btn-danger-sm {
+    padding: 0.5rem;
+    min-width: auto;
+    height: 38px; /* Altura aproximada dos inputs */
+    line-height: 1;
+    background-color: var(--danger-light, #fddede); /* Cor de fundo clara para perigo */
+    color: var(--danger);
+    border: 1px solid var(--danger);
+}
+.btn-remove-equip-utilizado.btn-danger-sm:hover {
+    background-color: var(--danger);
+    color: var(--white);
+}
+.btn-secondary-sm { /* Para o botão "Adicionar Equipamento Utilizado" */
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+}
+
+/* Para a descrição do formulário no modal */
+.form-description {
+    font-size: 0.9em;
+    color: var(--gray-dark);
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+    border-bottom: 1px dashed var(--gray-light);
+}
+
+
+.medicoes-instancias-container {
+  display: flex; /* Ou block, dependendo de como quer que os botões se alinhem */
+  flex-wrap: wrap;
+  gap: 0.5rem; /* Espaçamento entre os botões de instância */
+  margin-top: 0.5rem;
+  padding-left: 25px; /* Para alinhar com os detalhes, se houver */
+}
+
+.btn-medicao-instancia {
+  /* Estilos para os botões de instância, ex: menores que os botões principais */
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+  /* Outros estilos conforme .btn-secondary-sm ou similar */
+}
+.btn-medicao-instancia .material-icons {
+  font-size: 1rem;
+  margin-right: 4px;
+  vertical-align: text-bottom;
+}
+.btn-medicao-instancia.tem-dados {
+    border-color: var(--success); /* Exemplo: borda verde se tem dados */
+    color: var(--success);
+}

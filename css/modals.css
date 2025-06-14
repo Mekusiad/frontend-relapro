@@ -1,0 +1,506 @@
+
+.modal-overlay { /* Overlay que cobre a tela inteira */
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* Permite scroll se o modal for maior que a tela */
+  background-color: rgba(0, 0, 0, 0.6); /* Fundo escurecido */
+  display: flex; /* Para centralizar o .modal-content */
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease-out; /* Animação no overlay */
+}
+
+.modal-content {
+  background-color: var(--white);
+  /* margin: auto; Não é mais necessário com flex no overlay */
+  padding: 2.5rem;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-lg);
+  max-width: 700px; /* Largura máxima para os modais */
+  width: 90%; /* Responsividade em telas menores */
+  position: relative; /* Para o botão de fechar */
+  animation: fadeInScale 0.3s ease-out; /* Animação no conteúdo do modal */
+  max-height: 90vh; /* Altura máxima para evitar que o modal seja maior que a tela */
+  overflow-y: auto; /* Scroll interno se o conteúdo do modal for muito grande */
+}
+
+.modal-content h2 { /* Título principal do modal */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.8rem;
+  color: var(--primary-dark);
+  margin-top: 0; /* Remove margem superior padrão do h2 */
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--gray-light);
+  padding-bottom: 0.8rem;
+}
+
+.modal-content h3 { /* Estilo para os subtítulos dentro do modal (ex: "Adicionar Novo Técnico") */
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.modal-content .close-button { /* Botão de fechar (X) */
+  color: var(--gray-dark);
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.modal-content .close-button:hover,
+.modal-content .close-button:focus {
+  color: var(--black);
+  background-color: var(--gray-light);
+}
+
+
+.modal-content .form-actions {
+    margin-top: 1.5rem; /* Um pouco menos de margem no modal */
+}
+
+/* Estilos específicos para a lista de técnicos dentro do modal de técnicos */
+.technician-list-modal #technicianList { /* ID do UL dentro do modal de técnico */
+    list-style: none;
+    padding: 0;
+    margin-top: 1.5rem;
+}
+
+.technician-list-modal #technicianList li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--gray-light);
+    padding: 1rem 1.5rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 0.8rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.technician-list-modal #technicianList li span {
+    font-weight: 500;
+    color: var(--black);
+}
+
+.technician-list-modal #technicianList .technician-actions button {
+    background-color: transparent;
+    color: var(--primary-color);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    transition: var(--transition);
+    padding: 0; /* Remove padding extra do botão */
+}
+
+.technician-list-modal #technicianList .technician-actions button:hover {
+    background-color: rgba(42, 122, 79, 0.1);
+    color: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.technician-list-modal #technicianList .technician-actions .delete-technician-btn {
+    color: var(--danger);
+}
+.technician-list-modal #technicianList .technician-actions .delete-technician-btn:hover {
+    background-color: rgba(231, 76, 60, 0.1);
+}
+
+
+.no-items-message {
+    text-align: center;
+    color: var(--gray-dark);
+    font-style: italic;
+    padding: 15px;
+    border: 1px dashed var(--gray-light);
+    border-radius: var(--border-radius);
+    margin-top: 1rem; /* Adicionado para separar da seção acima */
+    margin-bottom: 1rem;
+}
+
+
+
+.polo-fieldset {
+  border: 1px solid var(--gray-medium);
+  border-radius: var(--border-radius-sm);
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.polo-fieldset legend {
+  font-weight: 500;
+  color: var(--primary-color);
+  padding: 0 0.5rem;
+}
+
+.form-section-sm h5 { /* Para "Equipamentos Utilizados no Ensaio" */
+    font-size: 1rem;
+    color: var(--primary-color);
+    margin-bottom: 0.8rem;
+    margin-top: 1rem; /* Espaçamento antes */
+}
+.btn-danger-sm { /* Para o botão de remover equipamento utilizado */
+    padding: 0.4rem 0.6rem !important;
+    font-size: 0.8rem !important;
+    min-width: auto !important;
+    background-color: #fddede !important;
+    color: var(--danger) !important;
+    border: 1px solid var(--danger) !important;
+}
+.btn-danger-sm:hover {
+    background-color: var(--danger) !important;
+    color: var(--white) !important;
+}
+.btn-secondary-sm {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+}
+.equipamento-utilizado-item .form-group {
+    margin-bottom: 0.5rem !important; 
+}
+
+
+
+.modal-content .main-title {
+    font-size: 1.5rem; 
+    font-weight: 600; 
+    color: #047857; 
+    margin-bottom: 24px;
+    border-bottom: 1px solid #d1d5db;
+    padding-bottom: 12px;
+    text-align: center;
+}
+
+.modal-content .section-title {
+    font-size: 1.125rem; 
+    font-weight: 600;
+    color: #1f2937; 
+    margin-top: 24px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 8px;
+}
+
+.modal-content .identificacao-grid { 
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+    gap: 16px 20px; 
+    margin-bottom: 20px;
+}
+
+
+.modal-content .input,
+.modal-content textarea.input,
+.modal-content select.input {
+    display: block;
+    width: 100%;
+    padding: 9px 12px; 
+    background-color: #ffffff;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}
+
+.modal-content .input:focus,
+.modal-content textarea.input:focus,
+.modal-content select.input:focus {
+    border-color: #10b981; 
+    box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.3); 
+}
+
+/* Estilos para as tabelas do formulário */
+.modal-content .table-container {
+    overflow-x: auto; 
+    margin-bottom: 20px;
+    border: 1px solid #e5e7eb; 
+    border-radius: 6px;
+}
+
+.modal-content table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8rem; 
+}
+
+.modal-content th, .modal-content td {
+    border: 1px solid #e5e7eb; 
+    padding: 10px 12px; 
+    text-align: left;
+    vertical-align: middle;
+}
+
+.modal-content th {
+    background-color: #f9fafb; 
+    font-weight: 600;
+    color: #374151;
+    white-space: nowrap; 
+}
+
+.modal-content thead th { 
+    border-top: 2px solid #047857; 
+}
+
+.modal-content td input[type="text"],
+.modal-content td input[type="number"],
+.modal-content td select.input {
+    width: 100%;
+    min-width: 60px; 
+    padding: 7px 8px; 
+    font-size: 0.8rem; 
+}
+
+
+.modal-content .servicos-list {
+    margin-bottom: 24px;
+}
+.modal-content .servico-item {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #f3f4f6; 
+}
+.modal-content .servico-item:last-child {
+    border-bottom: none;
+}
+.modal-content .servico-item label:first-child { 
+    flex-basis: 60%; 
+    font-size: 0.875rem;
+    color: #374151;
+    margin-right: 10px; 
+}
+.modal-content .servico-options {
+    display: flex;
+    justify-content: flex-start; 
+    gap: 10px; 
+    align-items: center; 
+}
+.modal-content .servico-options label { 
+    font-size: 0.875rem;
+    color: #374151;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    margin-right: 5px; 
+}
+.modal-content .servico-options label:last-child {
+    margin-right: 0;
+}
+.modal-content .servico-options input[type="radio"] {
+    margin-right: 5px;
+    accent-color: #059669;
+}
+
+@media (max-width: 900px) { 
+    .modal-content .servico-item label:first-child {
+        flex-basis: 100%; 
+        margin-bottom: 8px;
+        margin-right: 0;
+    }
+    .modal-content .servico-options {
+        width: 100%;
+        justify-content: flex-start; 
+        gap: 10px; 
+    }
+}
+
+
+
+.modal-content .subtitulo {
+    font-size: 1.5rem; 
+    font-weight: 600; 
+    color: #047857; 
+    margin-bottom: 24px; 
+    border-bottom: 1px solid #d1d5db; 
+    padding-bottom: 12px; 
+}
+
+.modal-content .radio-group,
+.modal-content .radio-line { 
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.modal-content .radio-line {
+     margin-bottom: 12px; 
+}
+.modal-content .radio-group label, 
+.modal-content .radio-line label {  
+    display: inline-flex;
+    align-items: center;
+    margin-right: 16px; 
+    font-size: 0.875rem; 
+    color: #374151; 
+    cursor: pointer;
+    margin-bottom: 8px;
+}
+
+
+.modal-content .radio-line > label:first-of-type {
+    display: block; 
+    font-weight: 500; 
+    margin-bottom: 8px;
+    width: 100%;
+    margin-right: 0; 
+}
+
+.modal-content .radio-group input[type="radio"],
+.modal-content .radio-line input[type="radio"] {
+    height: 16px; 
+    width: 16px; 
+    accent-color: #059669; 
+    margin-right: 4px; 
+    cursor: pointer;
+}
+
+.modal-content fieldset.form-group {
+    border: 1px solid #d1d5db; 
+    padding: 16px; 
+    border-radius: 6px; 
+    margin-bottom: 20px; 
+}
+
+.modal-content fieldset.form-group legend {
+    font-size: 1rem; 
+    font-weight: 600; 
+    color: #1f2937; 
+    padding: 0 8px; 
+}
+
+
+
+/* Títulos e seções dentro do modal */
+.modal-content .main-title {
+    font-size: 1.5rem; 
+    font-weight: 600; 
+    color: #047857; /* Verde ITAM */
+    margin-bottom: 24px;
+    border-bottom: 1px solid #d1d5db;
+    padding-bottom: 12px;
+    text-align: center;
+}
+
+.modal-content .section-title {
+    font-size: 1.125rem; 
+    font-weight: 600;
+    color: #1f2937; 
+    margin-top: 24px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 8px;
+}
+
+/* Grid para campos de identificação */
+.modal-content .identificacao-grid { 
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+    gap: 16px 20px; 
+    margin-bottom: 20px;
+}
+
+/* Inputs gerais dentro do modal, para padronizar */
+.modal-content .input,
+.modal-content textarea.input,
+.modal-content select.input {
+    display: block;
+    width: 100%;
+    padding: 9px 12px; 
+    background-color: #ffffff;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}
+
+.modal-content .input:focus,
+.modal-content textarea.input:focus,
+.modal-content select.input:focus {
+    border-color: #10b981; /* Verde ITAM mais claro */
+    box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.3); 
+}
+
+/* Tabelas de medição */
+.modal-content .table-container {
+    overflow-x: auto; 
+    margin-bottom: 20px;
+    border: 1px solid #e5e7eb; 
+    border-radius: 6px;
+}
+
+.modal-content table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8rem; 
+}
+
+.modal-content th, .modal-content td {
+    border: 1px solid #e5e7eb; 
+    padding: 10px 12px; 
+    text-align: left;
+    vertical-align: middle;
+}
+
+.modal-content th {
+    background-color: #f9fafb; 
+    font-weight: 600;
+    color: #374151;
+    white-space: nowrap; 
+}
+
+.modal-content td input[type="text"],
+.modal-content td input[type="number"],
+.modal-content td select.input {
+    width: 100%;
+    min-width: 60px; 
+    padding: 7px 8px; 
+    font-size: 0.8rem; 
+}
+
+
+
+.btn-loading {
+    position: relative;
+    pointer-events: none; /* Desabilita cliques */
+    color: transparent !important; /* Esconde o texto original */
+}
+
+.btn-loading::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.5);
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
